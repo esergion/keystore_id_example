@@ -1,0 +1,7 @@
+%h1
+  Добро пожаловать, #{@account.name}
+%p
+  Вы зарегистрированы, но вам необходимо подтвердить этот адрес,
+  пройдя по ссылке:
+  %br/
+  = link_to 'Подтвердить', main_app.confirm_email_url(@account.confirmation_token)

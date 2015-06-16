@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      = simple_form_for @account, url: update_password_path do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :email, as: :hidden
+          = f.input :password, required: true
+          = f.input :password_confirmation, required: true
+          = f.input :password_restore_token, as: :hidden
+        .form-actions
+          = f.button :submit, "Сменить пароль"

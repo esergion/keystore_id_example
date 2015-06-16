@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      = simple_form_for @account, url: registration_create_path do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :email, required: true, autofocus: true
+          = f.input :name, required: true
+          = f.input :password, required: true
+          = f.input :password_confirmation, required: true
+
+        .form-actions
+          = f.button :submit, "Зарегистрироваться"
+      .links
+        %br/
+        = link_to 'Не пришло письмо?', new_confirmation_path
+        %br/
+        = link_to 'Забыли пароль?', forgot_pass_path
